@@ -154,7 +154,7 @@ void suggestion_updater(
     const std::shared_ptr<Json_storage>& storage,
     const std::shared_ptr<Suggestions_collection>& suggestions,
     const std::shared_ptr<std::timed_mutex>& mutex) {
-  //using std::chrono_literals::operator""min;
+
   for (;;) {
     mutex->lock();
     storage->Load();
@@ -169,7 +169,8 @@ int Run_server(int argc, char* argv[]) {
   std::shared_ptr<std::timed_mutex> mutex =
       std::make_shared<std::timed_mutex>();
   std::shared_ptr<Json_storage> storage = std::make_shared<Json_storage>(
-      "/home/polinka/Рабочий стол/labs/lab-07-http-server/cmake-build-debug/suggestions.json");
+      "/home/polinka/Рабочий стол/labs/lab-07-http-server/cmake-build-debug/"
+      "suggestions.json");
   std::shared_ptr<Suggestions_collection> suggestions =
       std::make_shared<Suggestions_collection>();
   try {

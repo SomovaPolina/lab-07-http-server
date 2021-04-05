@@ -1,4 +1,4 @@
-//
+//"Copyright [year] <Copyright Owner>"
 // Created by polinka on 25.03.2021.
 //
 #include <exception>
